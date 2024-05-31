@@ -1,0 +1,22 @@
+# PURL configuration for https://purl.brain-bican.org/taxonomy/CCN20230722
+
+idspace: CCN20230722
+base_url: /taxonomy/CCN20230722
+
+products:
+- CCN20230722.json: https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_taxonomy/main/CCN20230722.json
+
+base_redirect: https://github.com/Cellular-Semantics/whole_mouse_brain_taxonomy
+
+entries:
+
+# https://purl.brain-bican.org/taxonomy/CCN20230722/CCN20230722.json
+- exact: /CCN20230722.json
+  replacement: https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_taxonomy/main/CCN20230722.json
+
+# https://purl.brain-bican.org/taxonomy/CCN20230722/releases/2023-09-24/CCN20230722.json
+- prefix: /releases/
+  replacement: https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_taxonomy/v
+  tests:
+    - from: /releases/2023-09-24/
+      to: https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_taxonomy/v2023-09-24/

@@ -1,0 +1,13 @@
+id: CCN20230722
+title: Whole Mouse Brain taxonomy
+description: Atlas of whole mouse brain.
+matrix_file_id: local_dataset:wmb50930-982a-11ee-b9d1-0242ac120002
+github_org: Cellular-Semantics
+repo: whole_mouse_brain_taxonomy
+author: https://orcid.org/0000-0002-9361-5607
+accession_id_prefix: CS20230722
+citation: 'https://doi.org/10.1038/s41586-023-06808-9'
+creators:
+  - https://orcid.org/0000-0002-0326-5878
+
+
