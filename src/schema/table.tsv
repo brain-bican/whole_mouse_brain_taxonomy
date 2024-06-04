@@ -2,3 +2,8 @@ table	path	type	edit_view	description
 table	src/schema/table.tsv	table		All of the user-editable tables in this project.
 column	src/schema/column.tsv	column		Columns for all of the tables.
 datatype	src/schema/datatype.tsv	datatype		Datatypes for all of the columns
+annotation	curation_tables/annotation.tsv		ols_form	
+labelset	curation_tables/labelset.tsv			
+metadata	curation_tables/metadata.tsv			
+annotation_transfer	curation_tables/annotation_transfer.tsv			
+review	curation_tables/review.tsv			

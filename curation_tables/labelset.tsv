@@ -1,0 +1,6 @@
+name	description	rank	annotation_method	automated_annotation_algorithm_name	automated_annotation_algorithm_version	automated_annotation_algorithm_repo_url	automated_annotation_reference_location
+neurotransmitter	Clusters are assigned based on the average expression of both neurotransmitter transporter genes and key neurotransmitter synthesizing enzyme genes.						
+class	The top level of cell type definition in the mouse whole brain taxonomy. It is primarily determined by broad brain region and neurotransmitter type. All cells within a subclass belong to the same class. Class provides a broader categorization of cell types.	3					
+subclass	The coarse level of cell type definition in the mouse whole brain taxonomy. All cells within a supertype belong to the same subclass. Subclass groups together related supertypes.	2					
+supertype	The second finest level of cell type definition in the mouse whole brain taxonomy. All cells within a cluster belong to the same supertype. Supertype groups together similar clusters.	1					
+cluster	The finest level of cell type definition in the mouse whole brain taxonomy. Cells within a cluster share similar characteristics and belong to the same supertype.	0					
