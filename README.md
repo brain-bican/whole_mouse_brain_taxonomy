@@ -1,6 +1,9 @@
 # Whole Mouse Brain taxonomy (CCN20230722)
 
-Atlas of whole mouse brain.
+Atlas of the whole mouse brain.
+
+Publication: https://doi.org/10.1038/s41586-023-06812-z
+Dataset: https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-taxonomy/20231215/
 
 Curate your taxonomy in 3 simple steps:
 
