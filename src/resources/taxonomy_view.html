@@ -64,7 +64,7 @@
     // clone a global variable before sorting
     table_data = data.slice()
 
-    // filter whose labelset rank is none (non-hierarchical labelsets such as neurotransmitter) 
+    // filter whose labelset rank is none (non-hierarchical labelsets such as neurotransmitter)
     data = data.filter(x => labelset_ranks[x.labelset] !== null);
     // sort highest rank first but ordered by accession_id if same rank
     data.sort((a, b) => (labelset_ranks[a.labelset] > labelset_ranks[b.labelset]) ? -1 : (labelset_ranks[a.labelset] === labelset_ranks[b.labelset]) ? ((parseInt(a.cell_set_accession.split("_")[-1]) > parseInt(b.cell_set_accession.split("_"))[-1]) ? 1 : -1) : 1 );

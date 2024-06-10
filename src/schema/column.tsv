@@ -33,11 +33,14 @@ annotation	marker_gene_evidence	marker gene evidence	empty	text		List of gene na
 annotation	synonyms	synonyms	empty	text		This field denotes any free-text term of a biological entity which the author associates as synonymous with the biological entity listed in the field 'cell_label'. In the case whereby no synonyms exist, the authors MAY leave this as blank, which is encoded as 'NA'. However, this field is NOT OPTIONAL. Multiple values can be concatenated by using the '|' character as a delimiter.
 annotation	neighborhood	neighborhood	empty	text		
 annotation	subclass.tf.markers.combo	subclass.tf.markers.combo	empty	text		
+annotation	subclass.markers.combo	subclass.markers.combo	empty	text		
 annotation	supertype.markers.combo _within subclass_	supertype.markers.combo  within subclass	empty	text		
+annotation	supertype.markers.combo	supertype.markers.combo	empty	text		
 annotation	anatomical_annotation	anatomical annotation	empty	text		
 annotation	merfish.markers.combo	merfish.markers.combo	empty	text		
 annotation	cluster.TF.markers.combo	cluster.TF.markers.combo	empty	text		
 annotation	cluster.markers.combo _within subclass_	cluster.markers.combo  within subclass	empty	text		
+annotation	cluster.markers.combo	cluster.markers.combo	empty	text		
 labelset	name	name		text	primary	
 labelset	description	description	empty	text		Some text describing what types of cell annotation this annotation key is used to record
 labelset	rank	rank	empty	text		A number indicating relative granularity with 0 being the most specific.  Use this where a single dataset has multiple keys that are used consistently to record annotations and different levels of granularity.
