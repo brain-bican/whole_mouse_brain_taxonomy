@@ -1,6 +1,7 @@
 {
   "cellannotation_schema_version": "0.2b0",
   "author_name": "Hongkui Zeng",
+  "title": "Whole Mouse Brain Taxonomy",
   "annotations": [
     {
       "labelset": "neurotransmitter",
