@@ -20,9 +20,15 @@ build/nanobot: | build/
 build_nomenclature_tables:
 	Rscript $(WORKSPACE)/dendR/nomenclature_builder.R
 
+# For first time data loading. Skips table creation if tables already exist.
 .PHONY: load_data
 load_data:
 	python3 $(IMPORT) import-data --input input_data/ --schema src/schema/ --curation_tables curation_tables/
+
+# Forcefully loads data. Drops and recreates tables.
+.PHONY: reload_data
+reload_data: clean
+	python3 $(IMPORT) import-data --input input_data/ --schema src/schema/ --curation_tables curation_tables/ --force --preserve
 
 .PHONY: runR
 runR:
@@ -47,14 +53,15 @@ serve: $(NANOBOTDB)
 	if [ $(AUTO_SYNCH) = true ]; then \
 		python3 $(EXPORT) data $(NANOBOTDB) src/schema/ table column datatype; \
 		python3 $(EXPORT) data $(NANOBOTDB) curation_tables/ $(foreach t,$(wildcard curation_tables/*.tsv), $(basename $(notdir $t))); \
-		git commit -a --message "Auto-commit on startup."; \
-		git pull; \
-		git push; \
-		rm -rf build/; \
+		tdta merge -p ./ -m "Auto-commit on startup."; \
+		rm -f build/nanobot.db; \
 		$(NANOBOT) init; \
 	fi
-	python3 $(WORKSPACE)/tdt_api.py &
-	$(NANOBOT) serve
+	/usr/bin/supervisord -n -c /etc/supervisor/conf.d/supervisord.conf
+
+.PHONY: init
+init: $(NANOBOTDB)
+	$(NANOBOT) init
 
 .PHONY: clean
 clean:

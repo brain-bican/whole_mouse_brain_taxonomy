@@ -28,9 +28,9 @@ inputs = [
 ]
 commands = [
   ["make", "save"],
-  ["git", "commit", "-a", "--message", "'{message}'"],
-  ["git", "pull"],
-  ["git", "push"]
+  ["tdta", "merge", "-p", "./", "-m", "{message}"],
+  ["git", "push"],
+  ["make", "init"]
 ]
 
 [actions.sub_file_publish]
@@ -40,11 +40,11 @@ inputs = [
 ]
 commands = [
   ["make", "save"],
-  ["git", "commit", "-a", "--allow-empty", "--message", "'Auto commit'"],
-  ["git", "pull"],
+  ["tdta", "merge", "-p", "./", "-m", "{message}"],
   ["git", "push"],
   ["gh", "release", "create", "{tag}"],
-  ["tdta", "purl-publish", "-i", "./", "-t", "CCN20230722", "-u", "'{username}'"]
+  ["tdta", "purl-publish", "-i", "./", "-t", "AIT117", "-u", "'{username}'"],
+  ["make", "init"]
 ]
 
 [actions.export]
@@ -61,6 +61,16 @@ commands = [
 label = "To AnnData"
 commands = [
   ["tdta", "anndata", "-db", "./build/nanobot.db", "-j", "./CCN20230722.json", "-o", "/tdt_datasets/CCN20230722.h5ad", "-c", "/tdt_datasets"]
+]
+
+[actions.generate]
+label = "Generate"
+commands = []
+
+[actions.sub_generate_docs]
+label = "Github Pages"
+commands = [
+  ["tdta", "docs", "-db", "./build/nanobot.db", "-o", "./docs"]
 ]
 
 [actions.github]
