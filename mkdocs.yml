@@ -9,27 +9,27 @@ nav:
 
 theme:
   name: material
-  features:
-    - navigation.instant
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.top
-    - navigation.tracking
-    - search.highlight
-    - search.share
-    - search.suggest
-    - toc.follow
-  palette:
-    # Palette toggle for light mode
-    - scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Palette toggle for dark mode
-    - scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+  # features:
+  #   - navigation.instant
+  #   - navigation.tabs
+  #   - navigation.tabs.sticky
+  #   - navigation.top
+  #   - navigation.tracking
+  #   - search.highlight
+  #   - search.share
+  #   - search.suggest
+  #   - toc.follow
+  # palette:
+  #   # Palette toggle for light mode
+  #   - scheme: default
+  #     toggle:
+  #       icon: material/brightness-7
+  #       name: Switch to dark mode
+  #   # Palette toggle for dark mode
+  #   - scheme: slate
+  #     toggle:
+  #       icon: material/brightness-4
+  #       name: Switch to light mode
   favicon: assets/logo.webp
   logo: assets/logo.webp
 
