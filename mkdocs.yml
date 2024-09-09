@@ -8,7 +8,7 @@ nav:
   - Cell Sets: cell_sets
 
 theme:
-  name: bootstrap
+  name: bootstrap4
   # name: material
   # features:
   #   - navigation.instant
