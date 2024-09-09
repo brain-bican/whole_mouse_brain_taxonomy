@@ -8,7 +8,8 @@ nav:
   - Cell Sets: cell_sets
 
 theme:
-  name: material
+  name: bootstrap
+  # name: material
   # features:
   #   - navigation.instant
   #   - navigation.tabs
@@ -30,8 +31,8 @@ theme:
   #     toggle:
   #       icon: material/brightness-4
   #       name: Switch to light mode
-  favicon: assets/logo.webp
-  logo: assets/logo.webp
+  # favicon: assets/logo.webp
+  # logo: assets/logo.webp
 
 plugins:
   - search
