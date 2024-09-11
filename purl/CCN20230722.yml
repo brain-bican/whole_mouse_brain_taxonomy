@@ -6,7 +6,7 @@ base_url: /taxonomy/CCN20230722
 products:
 - CCN20230722.json: https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_taxonomy/main/CCN20230722.json
 
-base_redirect: https://github.com/Cellular-Semantics/whole_mouse_brain_taxonomy
+base_redirect: https://cellular-semantics.github.io/whole_mouse_brain_taxonomy
 
 entries:
 
@@ -20,3 +20,11 @@ entries:
   tests:
     - from: /releases/2023-09-24/
       to: https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_taxonomy/v2023-09-24/
+
+# This config should be the last item since it will catch all remaining paths
+# https://purl.brain-bican.org/taxonomy/CCN20230722/CS20230722_CLAS_01
+- regex: ^/taxonomy/CCN20230722/CS20230722_(.*)$
+  replacement: https://cellular-semantics.github.io/whole_mouse_brain_taxonomy/cell_sets/CS20230722_$1
+  tests:
+  - from: /CCN20230722/CS20230722_CLAS_01
+    to: https://cellular-semantics.github.io/$$PROJECT_REPO$$/cell_sets/CS20230722_CLAS_01
