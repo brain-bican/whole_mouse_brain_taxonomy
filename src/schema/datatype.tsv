@@ -1,7 +1,7 @@
 datatype	parent	transform	condition	structure	description	SQL type	HTML type
 CURIE	nonspace		match(/\w+:\w+/)		a Compact URI		
 IRI	nonspace		exclude(/\s/)		an Internationalized Resource Identifier		
-OBI_ID	CURIE		match(/OBI:\S+/)	"concat(prefix, "":"", suffix)"	an OBI ID		
+OBI_ID	CURIE		match(/OBI:\S+/)	concat(prefix, ":", suffix)	an OBI ID		
 boolean	word	lowercase	in('true', 'false')		a boolean: true or false		radio
 class_type	word		in('equivalent', 'subclass')		an OWL class type: equivalent or subclass		search
 column_name	trimmed_line				a column name		

@@ -14,7 +14,7 @@ CS20230722_CLAS_02	02 NP-CT-L6b Glut				class							Pallium-Glut
 CS20230722_CLAS_03	03 OB-CR Glut				class							Pallium-Glut									
 CS20230722_CLAS_04	04 DG-IMN Glut				class							Pallium-Glut; NN-IMN-GC									
 CS20230722_CLAS_05	05 OB-IMN GABA				class							Subpallium-GABA; NN-IMN-GC									
-CS20230722_CLAS_06	06 CTX-CGE GABA				class	CL:4023070	caudal ganglionic eminence derived GABAergic cortical interneuron					Subpallium-GABA									
+CS20230722_CLAS_06	06 CTX-CGE GABA				class	CL:4023064	caudal ganglionic eminence derived cortical interneuron					Subpallium-GABA									
 CS20230722_CLAS_07	07 CTX-MGE GABA				class	CL:4023069	medial ganglionic eminence derived GABAergic cortical interneuron					Subpallium-GABA									
 CS20230722_CLAS_08	08 CNU-MGE GABA				class	CL:4023063	medial ganglionic eminence derived interneuron					Subpallium-GABA									
 CS20230722_CLAS_09	09 CNU-LGE GABA				class							Subpallium-GABA									
