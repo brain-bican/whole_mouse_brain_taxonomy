@@ -6826,12 +6826,12 @@ CS20230722_CLUS_5241	5241 Astroependymal NN_3		CS20230722_SUPT_1171	1171 Astroep
 CS20230722_CLUS_5242	5242 Astroependymal NN_3		CS20230722_SUPT_1171	1171 Astroependymal NN_3	cluster							NN-IMN-GC					AQ V4	Gfap,Kitl,Otx2,Sorcs3,Vwa5b1	Rfx4,Pax3,Gli1,Lmx1b	Dnah12	Gfap,Cubn,Prokr2,C230072F16Rik
 CS20230722_CLUS_5243	5243 Tanycyte NN_1		CS20230722_SUPT_1172	1172 Tanycyte NN_1	cluster							NN-IMN-GC					SFO (a little in OV)	Slc7a11,Pax8,Nkx2-1	Six6,Pax8,Nkx2-1	Cnmd	Cnmd,Sfta3-ps
 CS20230722_CLUS_5244	5244 Tanycyte NN_1		CS20230722_SUPT_1172	1172 Tanycyte NN_1	cluster							NN-IMN-GC					OV	Gja1,Nkx2-1,Eya2,Tacr1	Nkx2-1,Sox9,Pparg,Rfx4	Glp1r	C230072F16Rik,Glp1r
-CS20230722_CLUS_5245	5245 Tanycyte NN_2		CS20230722_SUPT_1173	1173 Tanycyte NN_2	cluster							NN-IMN-GC					V3 ve	Nkx2-4,Slc17a8,Tacr1	Rax,Tbx2,Rfx4,Nr2f2	Mylk3	Dynlrb2,Mylk3,Sfta3-ps
-CS20230722_CLUS_5246	5246 Tanycyte NN_2		CS20230722_SUPT_1173	1173 Tanycyte NN_2	cluster							NN-IMN-GC					V3 ve	Gja1,Nkx2-4,Cd24a	Rax,Ar,Rfx4,Carhsp1	Mroh5	Ccdc170,Nkx2-4,Dock8
-CS20230722_CLUS_5247	5247 Tanycyte NN_2		CS20230722_SUPT_1173	1173 Tanycyte NN_2	cluster							NN-IMN-GC					V3 ve	Nkx2-4,Ttc29,Dscaml1,Gpc3	Rax,Tbx3,Six3,Zeb2	Dscaml1,P3h2	Pdzph1,Wdr63,Dscaml1,P3h2
+CS20230722_CLUS_5245	5245 Tanycyte NN_2		CS20230722_SUPT_1173	1173 Tanycyte NN_2	cluster	CL:4042017	alpha1-tanycyte		DOI:10.1038/s41586-023-06812-z			NN-IMN-GC					V3 ve	Nkx2-4,Slc17a8,Tacr1	Rax,Tbx2,Rfx4,Nr2f2	Mylk3	Dynlrb2,Mylk3,Sfta3-ps
+CS20230722_CLUS_5246	5246 Tanycyte NN_2		CS20230722_SUPT_1173	1173 Tanycyte NN_2	cluster	CL:4042017	alpha1-tanycyte		DOI:10.1038/s41586-023-06812-z			NN-IMN-GC					V3 ve	Gja1,Nkx2-4,Cd24a	Rax,Ar,Rfx4,Carhsp1	Mroh5	Ccdc170,Nkx2-4,Dock8
+CS20230722_CLUS_5247	5247 Tanycyte NN_2		CS20230722_SUPT_1173	1173 Tanycyte NN_2	cluster	CL:4042018	alpha2-tanycyte		DOI:10.1038/s41586-023-06812-z			NN-IMN-GC					V3 ve	Nkx2-4,Ttc29,Dscaml1,Gpc3	Rax,Tbx3,Six3,Zeb2	Dscaml1,P3h2	Pdzph1,Wdr63,Dscaml1,P3h2
 CS20230722_CLUS_5248	5248 Tanycyte NN_2		CS20230722_SUPT_1173	1173 Tanycyte NN_2	cluster							NN-IMN-GC					V3 ve	Nkx2-4,Ttc29,Otx2	Rax,Otx2,Nkx2-4	Otx2,Nkx2-4	Ccdc146,Tbx3,Otx2
-CS20230722_CLUS_5249	5249 Tanycyte NN_2		CS20230722_SUPT_1173	1173 Tanycyte NN_2	cluster							NN-IMN-GC					V3 ve	Gja1,Nkx2-4,Frzb,Tbx3,Ttc29	Rax,Six6,Rfx4	Col25a1,C230072F16Rik	Gpr50,Frzb,Foxd2os
-CS20230722_CLUS_5250	5250 Tanycyte NN_3		CS20230722_SUPT_1174	1174 Tanycyte NN_3	cluster							NN-IMN-GC					V3 ve	Tbx3,Slc1a3,Scn7a	Rax,Fosb	Ecrg4	Fndc3c1,Ecrg4
+CS20230722_CLUS_5249	5249 Tanycyte NN_2		CS20230722_SUPT_1173	1173 Tanycyte NN_2	cluster	CL:4042019	beta1-tanycyte		DOI:10.1038/s41586-023-06812-z			NN-IMN-GC					V3 ve	Gja1,Nkx2-4,Frzb,Tbx3,Ttc29	Rax,Six6,Rfx4	Col25a1,C230072F16Rik	Gpr50,Frzb,Foxd2os
+CS20230722_CLUS_5250	5250 Tanycyte NN_3		CS20230722_SUPT_1174	1174 Tanycyte NN_3	cluster	CL:4042020	beta2-tanycyte		DOI:10.1038/s41586-023-06812-z			NN-IMN-GC					V3 ve	Tbx3,Slc1a3,Scn7a	Rax,Fosb	Ecrg4	Fndc3c1,Ecrg4
 CS20230722_CLUS_5251	5251 Ependymal NN_1		CS20230722_SUPT_1175	1175 Ependymal NN_1	cluster							NN-IMN-GC					AQ	Ttc29,Hdc,Cd36,Otx2	Foxj1,Myb,Foxa1,Msx1	Ifitm1	Tmem212,Ifitm1
 CS20230722_CLUS_5252	5252 Ependymal NN_1		CS20230722_SUPT_1175	1175 Ependymal NN_1	cluster							NN-IMN-GC					CA3	Ttc29,Hdc,Bmpr1b,Hoxb3	Foxj1,Myb,Pax3,Id1,Creb3l1	Pgm5,Cldn2	Tmem212,Pgm5,Cldn2
 CS20230722_CLUS_5253	5253 Ependymal NN_1		CS20230722_SUPT_1175	1175 Ependymal NN_1	cluster							NN-IMN-GC					VL V4	Hdc,Scn7a,Zic1,Lhfp	Foxj1,Myb,Pax3,Id3,Meis2	Pax3,Slc43a3	Ccdc153,Slc43a3,Pax3
