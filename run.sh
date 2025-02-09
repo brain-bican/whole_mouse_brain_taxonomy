@@ -10,7 +10,7 @@
 #
 # See README.md for more details.
 
-IMAGE=${IMAGE:-taxonomy-development-tools:2.0.0}
+IMAGE=${IMAGE:-taxonomy-development-tools:2.1.0}
 TDT_DEBUG=${TDT_DEBUG:-no}
 
 TIMECMD=
@@ -48,4 +48,4 @@ fi
 echo "datasets_dir: $datasets_dir"
 mkdir -p "$datasets_dir"
 
-docker run -v "$PWD:/work" -v "$datasets_dir:/tdt_datasets" -w /work --rm -ti -p 3000:3000 -p 5132:5000 -e "GITHUB_AUTH_TOKEN=$GH_TOKEN" --env "GITHUB_USER=$GITHUB_USER" --env "GITHUB_EMAIL=$GITHUB_EMAIL" ghcr.io/brain-bican/$IMAGE $TIMECMD "$@"
+docker run -v "$PWD:/work" -v "$datasets_dir:/tdt_datasets" -w /work --rm -ti -p 5132:5000 -e "GITHUB_AUTH_TOKEN=$GH_TOKEN" --env "GITHUB_USER=$GITHUB_USER" --env "GITHUB_EMAIL=$GITHUB_EMAIL" ghcr.io/brain-bican/$IMAGE $TIMECMD "$@"
