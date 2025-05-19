@@ -2,44 +2,18 @@
 
 Atlas of the whole mouse brain.
 
-Publication: https://doi.org/10.1038/s41586-023-06812-z  
-Dataset: https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-taxonomy/20231215/  
-PURL: https://purl.brain-bican.org/taxonomy/CCN20230722
+- **Publication**: [Nature (2024)](https://doi.org/10.1038/s41586-023-06812-z)  
+- **Dataset**: [Allen Brain Cell Atlas – Taxonomy Files](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-taxonomy/20231215/)  
+- **PURL**: https://purl.brain-bican.org/taxonomy/CCN20230722
 
-Curate your taxonomy in 3 simple steps:
+## Browse the Taxonomy
 
-- [Whole Mouse Brain taxonomy (CCN20230722)](#whole-mouse-brain-taxonomy-ccn20230722)
-  - [Get Taxonomy Development Tools](#get-taxonomy-development-tools)
-  - [Load your data](#load-your-data)
-  - [Browse](#browse)
+You can explore and edit the Whole Mouse Brain taxonomy using the [Taxonomy Development Platform](https://cellular-semantics.sanger.ac.uk/tdt) online editor.
 
-## Get Taxonomy Development Tools 
+---
 
-Pull the latest TDT docker image via following the steps defined in the project [GitHub Container Registry](https://github.com/brain-bican/taxonomy-development-tools/pkgs/container/taxonomy-development-tools). 
+## ⚙️ Initial Taxonomy Data Loading (*for admins*)
 
-```
-docker pull ghcr.io/brain-bican/taxonomy-development-tools:latest
-```
+To initialize the taxonomy repository for the first time, follow the official [curation guidelines](https://brain-bican.github.io/taxonomy-development-tools/Curation/).
 
-## Load your data
-
-Place your data (ex. [AIT115_annotation_sheet.tsv](https://github.com/brain-bican/taxonomy-development-tools/tree/main/examples/nhp_basal_ganglia/AIT115_annotation_sheet.tsv)) and configuration file (ex. [ingestion_config.yaml](https://github.com/brain-bican/taxonomy-development-tools/tree/main/examples/nhp_basal_ganglia/ingestion_config.yaml)) into your project's `input_data` folder.  
-
-Run following command in your project root folder to ingest your data files:
-
-```
-bash ./run.sh make load_data
-```
-
-## Browse
-
-Run following command in your project root folder to run the online data editor:
-```
-bash ./run.sh make serve
-```
-
-This command will print a set of logs including a log like `nanobot::serve: listening on 0.0.0.0:3000`. This means your web editor is ready, and you can start editing your data.
-
-You can start browsing web taxonomy editor from: [http://localhost:3000/table](http://localhost:3000/table)
-
-_For further details see [Taxonomy Development Tools Documentation](https://brain-bican.github.io/taxonomy-development-tools/)_
+_For additional details, see the full [Taxonomy Development Tools documentation](https://brain-bican.github.io/taxonomy-development-tools/)._
