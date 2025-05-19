@@ -48,7 +48,7 @@ jobs:
 
       - name: Run tdta export
         run: |
-          tdta export -f ./curation_tables -o "${{ steps.set_vars.outputs.cas_json_file }}" -c
+          tdta export -f ./curation_tables -o "${{ steps.set_vars.outputs.cas_json_file }}" -c ./
 
       - name: Run cas2rdf conversion
         run: |
