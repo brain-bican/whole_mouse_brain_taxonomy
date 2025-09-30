@@ -7,7 +7,7 @@ SHEET_ID = "1LkeHNxWd5eltpbbYzH2aocMpnZjpIS7PpwXFk9d5ggg"
 
 # Map tab names -> gids (fill in the real gid values)
 TABS = {
-    "whole_mouse_brain_taxonomy_annotation": "0",
+    "WMBT_annotation": "0",
 }
 
 # Get repo name to strip as prefix (e.g., "whole_mouse_brain_taxonomy")
