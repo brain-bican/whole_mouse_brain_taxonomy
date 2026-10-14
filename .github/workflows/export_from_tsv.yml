@@ -3,7 +3,8 @@ name: Export Taxonomy from TSVs
 # Regenerates CAS JSON and RDF from the committed curation_tables TSVs.
 # Unlike export_publish.yml, this does not download annotations from Google Sheets.
 
-permissions: write-all
+permissions:
+  contents: read # GITHUB_TOKEN is only used to clone; pushes use TDT_TOKEN
 
 on:
   push:
