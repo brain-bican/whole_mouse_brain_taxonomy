@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install tdta cas-tools requests
+          pip install tdta cas-tools pandas
 
       - name: Google sheets to tsv
         run: python src/google_sheets_to_tsv.py
