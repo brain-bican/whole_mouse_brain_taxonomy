@@ -11,6 +11,7 @@ on:
       - main
     paths:
       - 'curation_tables/**'
+      - '*_project_config.yaml'
   workflow_dispatch:
 
 concurrency:
@@ -56,45 +57,61 @@ jobs:
           echo "taxonomy_id=$taxonomy_id" >> $GITHUB_OUTPUT
           echo "Found JSON file: $cas_json_file with taxonomy_id: $taxonomy_id"
 
-      - name: Run tdta export
-        run: |
-          tdta export -f ./curation_tables -o "${{ steps.set_vars.outputs.cas_json_file }}" -c ./
-
-      - name: Run cas2rdf conversion
-        run: |
-          cas cas2rdf --schema bican \
-          --data "${{ steps.set_vars.outputs.cas_json_file }}" \
-          --ontology_ns "${{ steps.set_vars.outputs.taxonomy_id }}" \
-          --ontology_iri "https://purl.brain-bican.org/ontology/${{ steps.set_vars.outputs.taxonomy_id }}/" \
-          --out "${{ steps.set_vars.outputs.taxonomy_id }}.rdf" \
-          --exclude_cells
-
-      - name: Commit changes
+      # Builds from the latest remote branch and pushes. If someone pushes to the branch
+      # while this runs, the push is rejected and the artifacts are rebuilt from the new
+      # remote state, so the pushed JSON/RDF always match the TSVs they sit next to.
+      - name: Export, commit and push
+        env:
+          TDT_TOKEN: ${{ secrets.TDT_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+          CAS_JSON_FILE: ${{ steps.set_vars.outputs.cas_json_file }}
+          TAXONOMY_ID: ${{ steps.set_vars.outputs.taxonomy_id }}
         run: |
           set -e
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${TDT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
-          # Normalize TSVs to LF (safe on Linux runner)
-          if compgen -G "curation_tables/*.tsv" > /dev/null; then
-            sed -i 's/\r$//' curation_tables/*.tsv || true
-            git add curation_tables/*.tsv
-          fi
+          max_attempts=3
+          for attempt in $(seq 1 $max_attempts); do
+            echo "Attempt $attempt of $max_attempts"
+            git fetch origin "$BRANCH"
+            git reset --hard "origin/$BRANCH"
 
-          # Add generated CAS JSON and RDF (if present)
-          git add "${{ steps.set_vars.outputs.cas_json_file }}" "${{ steps.set_vars.outputs.taxonomy_id }}.rdf" || true
+            tdta export -f ./curation_tables -o "$CAS_JSON_FILE" -c ./
 
-          # Commit only if there are staged changes
-          if git diff --staged --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
+            cas cas2rdf --schema bican \
+            --data "$CAS_JSON_FILE" \
+            --ontology_ns "$TAXONOMY_ID" \
+            --ontology_iri "https://purl.brain-bican.org/ontology/$TAXONOMY_ID/" \
+            --out "$TAXONOMY_ID.rdf" \
+            --exclude_cells
 
-          git commit -m "chore: regenerate CAS JSON and RDF from TSVs"
+            # Normalize TSVs to LF (safe on Linux runner)
+            if compgen -G "curation_tables/*.tsv" > /dev/null; then
+              sed -i 's/\r$//' curation_tables/*.tsv || true
+              git add curation_tables/*.tsv
+            fi
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{secrets.TDT_TOKEN}}
-          branch: ${{ github.ref_name }}
+            # Add generated CAS JSON and RDF (if present)
+            git add "$CAS_JSON_FILE" "$TAXONOMY_ID.rdf" || true
+
+            # Commit only if there are staged changes
+            if git diff --staged --quiet; then
+              echo "No changes to commit."
+              exit 0
+            fi
+
+            git commit -m "chore: regenerate CAS JSON and RDF from TSVs"
+
+            if git push origin "HEAD:$BRANCH"; then
+              echo "Pushed to $BRANCH."
+              exit 0
+            fi
+
+            echo "Push rejected; $BRANCH moved during the run. Rebuilding from the latest state."
+          done
+
+          echo "Failed to push after $max_attempts attempts." >&2
+          exit 1
