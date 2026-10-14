@@ -37630,8 +37630,10 @@
         "10.3389/fnana.2015.00124"
       ],
       "marker_gene_evidence": [
-        "Pvalb+ (defining",
-        " concordant); Gad1/Gad2+ (GABAergic); Cnr1- (distinguishes from CCK basket cell; low residual atlas signal)."
+        "Pvalb",
+        "Gad1",
+        "Gad2",
+        "Cnr1"
       ],
       "parent_cell_set_accession": "CS20230722_SUPT_0206",
       "author_annotation_fields": {
@@ -289996,7 +289998,11 @@
         "10.1073/pnas.2306382121"
       ],
       "marker_gene_evidence": [
-        "Sst+ (defining); Chrna2+ (OLM-selective); Reln+; Grm1/mGluR1+ (~96% detection); Npy+ (mouse; Winterer 2019); Pvalb- (sparse)."
+        "Sst",
+        "Chrna2",
+        "Reln",
+        "Grm1",
+        "Npy"
       ],
       "parent_cell_set_accession": "CS20230722_SUBC_053",
       "author_annotation_fields": {
