@@ -43,6 +43,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install tdta cas-tools
 
+      - name: Fetch CL SemSQL database
+        # cas-tools pins oaklib 0.6.4, which downloads from the retired bbop-sqlite S3 bucket.
+        # Pre-populate oaklib's pystow cache from the semantic-sql CDN instead.
+        run: |
+          mkdir -p ~/.data/oaklib
+          curl -fsSL --retry 3 https://semanticsql.berkeleybop.io/cl.db.gz | gunzip > ~/.data/oaklib/cl.db
+
       - name: Identify JSON file and Taxonomy ID
         id: set_vars
         run: |
