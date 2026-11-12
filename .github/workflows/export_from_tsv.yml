@@ -89,6 +89,10 @@ jobs:
 
             tdta export -f ./curation_tables -o "$CAS_JSON_FILE" -c ./
 
+            # cas2rdf rejects CL terms that aren't in cl.db yet (minted since the last
+            # CL release reached SemSQL); add any the annotation table uses.
+            python .github/scripts/add_unreleased_cl_terms.py curation_tables/annotation.tsv ~/.data/oaklib/cl.db
+
             cas cas2rdf --schema bican \
             --data "$CAS_JSON_FILE" \
             --ontology_ns "$TAXONOMY_ID" \
